@@ -1,8 +1,8 @@
 import Spline from "@splinetool/react-spline/next"
 import Container from "@/components/Container"
-import { motion } from "framer-motion"
 import Hero from "@/components/Hero"
 import MarqueeFooter from "@/components/MarqueeFooter"
+import { TechDragCards } from "@/components/TechDragCards"
 
 export default function App() {
   return (
@@ -20,9 +20,7 @@ export default function App() {
 
       {/* Scrollable content */}
       <Container>
-        <p className="text-xl text-[#4B2E12]">
-          This is scrollable content below the Spline canvas.
-        </p>
+        <TechDragCards />
       </Container>
 
       <MarqueeFooter />
