@@ -1,5 +1,8 @@
 import Spline from "@splinetool/react-spline/next"
 import Container from "@/components/Container"
+import { motion } from "framer-motion"
+import Hero from "@/components/Hero"
+import MarqueeFooter from "@/components/MarqueeFooter"
 
 export default function App() {
   return (
@@ -12,12 +15,7 @@ export default function App() {
         <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#ffd88d]"></div>
 
         {/* Hero content */}
-        <Container className="h-full flex flex-col justify-center">
-          <div className="font-voxel text-foreground">
-            <p className="text-9xl  font-bold">Joel Crasta</p>
-            <p className="text-6xl">Developer</p>
-          </div>
-        </Container>
+        <Hero />
       </section>
 
       {/* Scrollable content */}
@@ -26,6 +24,8 @@ export default function App() {
           This is scrollable content below the Spline canvas.
         </p>
       </Container>
+
+      <MarqueeFooter />
     </main>
   )
 }
