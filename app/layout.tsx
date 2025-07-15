@@ -1,10 +1,16 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import { Pixelify_Sans } from "next/font/google"
 import "./globals.css"
 
 const voxel = localFont({
   src: "../fonts/Voxel.otf",
   variable: "--font-voxel",
+})
+
+const pixelify = Pixelify_Sans({
+  variable: "--font-pixelify",
+  weight: ["400"],
 })
 
 export const metadata: Metadata = {
@@ -20,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${voxel.variable} font-sans antialiased`}>
+      <body
+        className={`${voxel.variable} ${pixelify.variable} font-sans antialiased`}
+      >
         {children}
       </body>
     </html>
