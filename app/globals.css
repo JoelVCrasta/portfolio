@@ -3,7 +3,7 @@
 @theme inline {
   --color-foreground: #4b2e12;
   --color-background: #ffd88d;
-  --color-accent: #4b2e12;
+  --color-accent: #fcdfa9;
 
   --font-voxel: var(--font-voxel), Helvetica, sans-serif;
   --font-pixelify: var(--font-pixelify), Helvetica, sans-serif;
