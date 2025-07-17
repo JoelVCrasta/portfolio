@@ -24,10 +24,16 @@ const Cards = () => {
         containerRef={containerRef}
         rotate="6deg"
         top="20%"
-        left="25%"
-        title="languages"
+        left="10%"
+        title="Languages"
       >
-        + GoLang
+        GoLang
+        <br />
+        Typescript
+        <br />
+        Python
+        <br />
+        C++
       </Card>
 
       <Card
@@ -35,29 +41,47 @@ const Cards = () => {
         rotate="12deg"
         top="45%"
         left="70%"
-        title="languages"
+        title="Frameworks"
       >
-        + GoLang
+        React
+        <br />
+        React Native
+        <br />
+        Express
+        <br />
+        Gin
       </Card>
 
       <Card
         containerRef={containerRef}
         rotate="-6deg"
-        top="20%"
-        left="40%"
-        title="languages"
+        top="10%"
+        left="50%"
+        title="Databases"
       >
-        + GoLang
+        MongoDB
+        <br />
+        Supabase
+        <br />
+        PostgreSQL
+        <br />
+        DynamoDB
       </Card>
 
       <Card
         containerRef={containerRef}
         rotate="-4deg"
         top="50%"
-        left="40%"
-        title="languages"
+        left="20%"
+        title="Tools"
       >
-        + GoLang
+        Git
+        <br />
+        Docker
+        <br />
+        Postman
+        <br />
+        Linux
       </Card>
     </div>
   )
