@@ -11,6 +11,7 @@
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.10.24",
+    "lucide": "^0.525.0",
     "motion": "^12.23.3",
     "next": "15.3.5",
     "react": "^19.0.0",
