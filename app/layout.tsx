@@ -11,6 +11,7 @@ const voxel = localFont({
 const pixelify = Pixelify_Sans({
   variable: "--font-pixelify",
   weight: ["400"],
+  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
