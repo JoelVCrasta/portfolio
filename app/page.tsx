@@ -1,10 +1,10 @@
 import Spline from "@splinetool/react-spline/next"
 import Container from "@/components/Container"
 import Hero from "@/components/Hero"
-import Projects from "@/components/Projects"
 import MarqueeFooter from "@/components/MarqueeFooter"
 import { TechDragCards } from "@/components/TechDragCards"
 import Social from "@/components/Social"
+import Projects from "@/components/Projects"
 
 export default function App() {
   return (
@@ -25,7 +25,6 @@ export default function App() {
       <Container>
         <TechDragCards />
         <Projects />
-
       </Container>
 
       <MarqueeFooter />
