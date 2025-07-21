@@ -1,4 +1,6 @@
+import Image from "next/image"
 import ProjectCard from "./ProjectCard"
+import SpriteAnimation from "./SpriteAnimation"
 
 const Projects = () => {
   const projects = [
@@ -26,11 +28,22 @@ const Projects = () => {
 
   return (
     <section>
-      <div className="px-5 border-x-4 border-t-4">
-        <p className="font-bold font-pixelify py-12 text-xl md:text-5xl lg:text-7xl">
+      <div className="px-5 border-x-4 border-t-4 flex items-center justify-center gap-8">
+        <Image
+          src={"/arrow2.gif"}
+          alt="test"
+          width={192}
+          height={0}
+          style={{ transform: "scaleX(-1)" }}
+        />
+
+        <p className="font-bold font-pixelify py-12 text-2xl md:text-5xl lg:text-7xl">
           Projects
         </p>
+
+        <Image src={"/arrow2.gif"} alt="test" width={192} height={0} />
       </div>
+
       <div className="divide-y-4 divide-muted border-4 border-muted">
         {projects.map((project, index) => (
           <div key={index}>
