@@ -1,6 +1,5 @@
 import Image from "next/image"
 import ProjectCard from "./ProjectCard"
-import SpriteAnimation from "./SpriteAnimation"
 
 const Projects = () => {
   const projects = [
