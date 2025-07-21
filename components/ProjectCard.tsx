@@ -1,4 +1,4 @@
-import React from "react"
+import Image from "next/image"
 
 type ProjectCardProps = {
   title: string
@@ -18,10 +18,10 @@ const ProjectCard = ({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative mx-auto px-5 flex items-center justify-between hover:bg-foreground hover:text-background transition-colors duration-300 font-pixelify"
+      className="group relative mx-auto px-5 flex items-center justify-between hover:bg-foreground hover:text-background transition-colors duration-300 font-pixelify "
     >
       <div className="relative h-full w-full overflow-hidden">
-        <h1 className="py-12 text-xl font-bold tracking-tighter duration-500 group-hover:-translate-y-full md:text-5xl lg:text-7xl">
+        <h1 className=" py-12  text-xl font-bold tracking-tighter md:text-5xl lg:text-7xl duration-500 group-hover:-translate-y-full">
           {title}
         </h1>
 
@@ -29,6 +29,7 @@ const ProjectCard = ({
           <h1 className="text-xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
             {title}
           </h1>
+
           <h2 className="text-lg font-medium opacity-70 md:text-2xl lg:text-3xl">
             {subtitle}
           </h2>
@@ -38,6 +39,13 @@ const ProjectCard = ({
       <p className="w-3/5 text-md text-text/70 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-70 md:text-xl">
         {description}
       </p>
+
+      <Image
+        src="/external-link.png"
+        alt="External Link Icon"
+        width={60}
+        height={60}
+      />
     </a>
   )
 }

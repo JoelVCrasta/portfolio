@@ -22,7 +22,7 @@ export default function App() {
       </section>
 
       {/* Scrollable content */}
-      <Container>
+      <Container className="space-y-16` ">
         <TechDragCards />
         <Projects />
       </Container>
