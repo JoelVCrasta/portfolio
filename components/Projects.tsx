@@ -1,6 +1,4 @@
-import { title } from "process"
 import ProjectCard from "./ProjectCard"
-import { desc } from "motion/react-client"
 
 const Projects = () => {
   const projects = [
@@ -28,15 +26,23 @@ const Projects = () => {
 
   return (
     <section>
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          title={project.title}
-          subtitle={project.subtitle}
-          description={project.description}
-          link={project.link}
-        />
-      ))}
+      <div className="px-5 border-x-4 border-t-4">
+        <p className="font-bold font-pixelify py-12 text-xl md:text-5xl lg:text-7xl">
+          Projects
+        </p>
+      </div>
+      <div className="divide-y-4 divide-muted border-4 border-muted">
+        {projects.map((project, index) => (
+          <div key={index}>
+            <ProjectCard
+              title={project.title}
+              subtitle={project.subtitle}
+              description={project.description}
+              link={project.link}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
