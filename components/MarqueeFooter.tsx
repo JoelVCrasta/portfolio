@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee"
 
 const MarqueeFooter = () => {
   return (
-    <div className="overflow-hidden">
-      <div className="font-voxel font-bold text-9xl leading-none relative -translate-y-[-24%]">
+    <div className="bg-foreground text-background flex pt-8 mt-8">
+      <div className="font-voxel font-bold text-9xl">
         <Marquee autoFill>Portfolio . Joel Crasta .&nbsp;</Marquee>
       </div>
     </div>
