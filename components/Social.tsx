@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Social = () => {
   return (
-    <section className="flex items-center justify-center gap-4 absolute top-10 left-10">
+    <section className="flex items-center justify-center gap-4 absolute top-10 left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-10">
       <Image src="/arrow.gif" alt="arrow" width={24} height={24} />
       <a
         href="https://github.com/JoelVCrasta"
