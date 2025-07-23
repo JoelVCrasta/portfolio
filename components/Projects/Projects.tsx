@@ -1,5 +1,6 @@
 import Image from "next/image"
 import ProjectCard from "./ProjectCard"
+import ProjectCardMobile from "./ProjectCardMobile"
 
 const Projects = () => {
   const projects = [
@@ -27,7 +28,7 @@ const Projects = () => {
 
   return (
     <section>
-      <div className="px-5 border-x-4 border-t-4 flex items-center justify-center gap-8">
+      <div className="px-5 border-x-4 border-t-4 flex items-center justify-center gap-4 md:gap-8">
         <Image
           src={"/arrow2.gif"}
           alt="test"
@@ -47,6 +48,12 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div key={index}>
             <ProjectCard
+              title={project.title}
+              subtitle={project.subtitle}
+              description={project.description}
+              link={project.link}
+            />
+            <ProjectCardMobile
               title={project.title}
               subtitle={project.subtitle}
               description={project.description}
