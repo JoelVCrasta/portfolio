@@ -4,7 +4,7 @@ import Hero from "@/components/Hero"
 import MarqueeFooter from "@/components/MarqueeFooter"
 import { TechDragCards } from "@/components/TechDragCards"
 import Social from "@/components/Social"
-import Projects from "@/components/Projects"
+import Projects from "@/components/Projects/Projects"
 
 export default function App() {
   return (
@@ -12,8 +12,9 @@ export default function App() {
       <section className="relative w-full h-screen">
         <Spline
           scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode"
-          className="absolute inset-0 w-full h-full z-0"
+          className="absolute inset-0 w-full h-full z-0 hidden xl:block"
         />
+
         <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#ffd88d]"></div>
         <Social />
 
@@ -22,7 +23,7 @@ export default function App() {
       </section>
 
       {/* Scrollable content */}
-      <Container className="space-y-16 ">
+      <Container className="space-y-16 md:space-y-24 xl:space-y-32 mt-0 xl:mt-32">
         <TechDragCards />
         <Projects />
       </Container>
