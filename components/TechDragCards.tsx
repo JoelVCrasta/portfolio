@@ -6,9 +6,9 @@ import { twMerge } from "tailwind-merge"
 
 export const TechDragCards = () => {
   return (
-    <section className="relative grid min-h-screen w-full place-content-center overflow-hidden select-none border-4">
-      <h2 className="relative z-0 text-[20vw] font-bold text-foreground font-voxel md:text-[200px]">
-        Technology
+    <section className="relative grid min-h-[600] xl:min-h-[800px] w-full place-content-center overflow-hidden select-none border-4">
+      <h2 className="relative z-0 text-[16vw] font-bold text-foreground font-voxel md:text-[140px] xl:text-[200px]">
+        Tech Stack
       </h2>
       <Cards />
     </section>
@@ -23,7 +23,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         rotate="6deg"
-        top="20%"
+        top="10%"
         left="10%"
         title="Languages"
       >
@@ -40,7 +40,7 @@ const Cards = () => {
         containerRef={containerRef}
         rotate="12deg"
         top="45%"
-        left="70%"
+        left="60%"
         title="Frameworks"
       >
         React
@@ -72,7 +72,7 @@ const Cards = () => {
         containerRef={containerRef}
         rotate="-4deg"
         top="50%"
-        left="20%"
+        left="14%"
         title="Tools"
       >
         Git
@@ -139,7 +139,7 @@ const Card = ({
         zIndex,
       }}
       className={twMerge(
-        "drag-elements absolute h-96 w-80 p-6 bg-accent shadow-lg shadow-foreground border-4 flex flex-col gap-4",
+        "drag-elements absolute h-60 w-50 md:h-72 md:w-60 xl:h-96 xl:w-80 p-6 bg-accent shadow-lg shadow-foreground border-4 flex flex-col gap-4",
         className
       )}
       drag
@@ -147,9 +147,11 @@ const Card = ({
       dragElastic={0.65}
     >
       {title && (
-        <div className="text-center text-5xl font-bold font-voxel">{title}</div>
+        <div className="text-center text-2xl md:text-4xl xl:text-5xl font-bold font-voxel">
+          {title}
+        </div>
       )}
-      <div className="flex-1 flex justify-center items-center font-pixelify text-3xl">
+      <div className="flex-1 flex justify-center items-center font-pixelify text-lg md:text-2xl xl:text-3xl">
         {children}
       </div>
     </motion.div>
