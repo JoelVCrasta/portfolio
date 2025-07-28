@@ -20,7 +20,7 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        className="font-voxel leading-30 flex xl:block justify-center"
+        className="leading-30 flex xl:block justify-center"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
