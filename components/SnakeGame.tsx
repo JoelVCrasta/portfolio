@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
 type Coord = { x: number; y: number }
@@ -33,10 +34,10 @@ export default function SnakeGame() {
     ctx.setTransform(gridSize, 0, 0, gridSize, 0, 0)
     ctx.clearRect(0, 0, tileCount, tileCount)
 
-    ctx.fillStyle = "red"
+    ctx.fillStyle = "#834FA6"
     ctx.fillRect(food.x, food.y, 1, 1)
 
-    ctx.fillStyle = "lime"
+    ctx.fillStyle = "#4b2e12"
     for (const segment of snake) {
       ctx.fillRect(segment.x, segment.y, 1, 1)
     }
@@ -44,7 +45,13 @@ export default function SnakeGame() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!started) setStarted(true)
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        e.preventDefault()
+      }
+
+      if (!started && (dir.x !== 0 || dir.y !== 0)) {
+        setStarted(true)
+      }
 
       switch (e.key) {
         case "ArrowUp":
@@ -104,7 +111,7 @@ export default function SnakeGame() {
 
         return newSnake
       })
-    }, 100)
+    }, 140)
 
     return () => clearInterval(interval)
   }, [dir, food, gameOver, started])
@@ -137,60 +144,89 @@ export default function SnakeGame() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-2 md:p-5 border-4 w-5/12">
-      <h1 className="text-2xl font-voxel font-bold">Score: {score}</h1>
+    <div className="flex flex-col items-center justify-center p-2 md:p-5 border-4 lg:w-5/12 w-1/2">
+      <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full">
+        <p className="text-2xl lg:text-2xl font-voxel font-bold">
+          Score: {score}
+        </p>
+
+        <p className="text-foreground text-lg lg:text-xl font-pixelify">
+          Use the arrows to play!
+        </p>
+      </div>
 
       <canvas
         ref={canvasRef}
         width={canvasSize}
         height={canvasSize}
-        className="bg-neutral-800 border-2 border-gray-600"
+        className="bg-accent border-4 shadow-lg relative w-full aspect-square"
       />
 
       {!started && !gameOver && (
-        <p className="mt-4 text-gray-400">Use arrows or tap to start</p>
+        <button
+          onClick={() => {
+            setDir({ x: 0, y: -1 })
+            setStarted(true)
+          }}
+          className="bg-foreground text-background px-6 py-2 font-pixelify text-3xl border-4 hover:brightness-110 transition absolute"
+        >
+          Play
+        </button>
       )}
 
       {gameOver && (
-        <div className="mt-4 text-center">
-          <p className="text-red-500 text-xl mb-2">Game Over</p>
+        <div className="absolute text-center bg-foreground py-2 px-8 transition">
+          <p className="text-background text-3xl font-pixelify mb-2">
+            Game Over
+          </p>
+
           <button
             onClick={resetGame}
-            className="px-4 py-2 bg-white text-black rounded hover:bg-gray-200"
+            className="flex justify-center items-center w-full cursor-pointer"
           >
-            Restart
+            <p className="text-background text-2xl font-voxel">Restart</p>
+            <Image
+              src="/pixel-chevron.png"
+              alt="Restart"
+              width={32}
+              height={32}
+              className="rotate-90"
+            />
           </button>
         </div>
       )}
 
       {/* Mobile controls */}
-      <div className="mt-6 flex flex-col items-center gap-2 md:hidden">
+      <div className="mt-4 flex items-center gap-2 lg:hidden">
         <button
-          onClick={() => handleTouchDir("up")}
-          className="bg-gray-300 text-black px-6 py-2 rounded"
+          onClick={() => handleTouchDir("left")}
+          className="bg-foreground text-background px-5 py-1"
         >
-          ↑
+          ←
         </button>
-        <div className="flex gap-4">
+
+        <div className="flex flex-col gap-2">
           <button
-            onClick={() => handleTouchDir("left")}
-            className="bg-gray-300 text-black px-6 py-2 rounded"
+            onClick={() => handleTouchDir("up")}
+            className="bg-foreground text-background px-6 py-1"
           >
-            ←
+            ↑
           </button>
+
           <button
             onClick={() => handleTouchDir("down")}
-            className="bg-gray-300 text-black px-6 py-2 rounded"
+            className="bg-foreground text-background px-6 py-1"
           >
             ↓
           </button>
-          <button
-            onClick={() => handleTouchDir("right")}
-            className="bg-gray-300 text-black px-6 py-2 rounded"
-          >
-            →
-          </button>
         </div>
+
+        <button
+          onClick={() => handleTouchDir("right")}
+          className="bg-foreground text-background px-5 py-1"
+        >
+          →
+        </button>
       </div>
     </div>
   )
