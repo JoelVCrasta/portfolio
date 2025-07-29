@@ -1,6 +1,6 @@
 const Message = () => {
   return (
-    <section className="border-4 p-2 md:p-5 w-7/12">
+    <section className="border-4 p-2 md:p-5 lg:w-7/12">
       <h2 className="font-pixelify text-2xl md:text-5xl lg:text-7xl font-bold mb-4">
         Send me a message :3
       </h2>
@@ -10,8 +10,8 @@ const Message = () => {
         method="POST"
         className="flex flex-col gap-4"
       >
-        <div className="flex gap-4">
-          <div className="flex flex-col w-full">
+        <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-col flex-1 min-w-[240px]">
             <label
               htmlFor="name"
               className="font-pixelify font-bold text-2xl lg:text-3xl"
@@ -27,7 +27,7 @@ const Message = () => {
             />
           </div>
 
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col flex-1 min-w-[240px]">
             <label
               htmlFor="email"
               className="font-pixelify font-bold text-2xl lg:text-3xl"
