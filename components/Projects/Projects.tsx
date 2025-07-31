@@ -1,6 +1,6 @@
-import Image from "next/image"
-import ProjectCard from "./ProjectCard"
-import ProjectCardMobile from "./ProjectCardMobile"
+import Image from "next/image";
+import ProjectCard from "./ProjectCard";
+import ProjectCardMobile from "./ProjectCardMobile";
 
 const Projects = () => {
   const projects = [
@@ -19,12 +19,32 @@ const Projects = () => {
       link: "https://github.com/JoelVCrasta/goskii",
     },
     {
+      title: "Nocturne",
+      subtitle: "C, Raylib",
+      description:
+        "A 3D psychological adventure game made using Raylib as a fun collaboration project.",
+      link: "https://github.com/sceptix-club/Nocturne",
+    },
+    {
+      title: "Animoox",
+      subtitle: "Typescript, Next.js, AWS",
+      description: "A lottie files and icon packs website.",
+      link: "",
+    },
+    {
+      title: "HTF 3.0 Volunteer App",
+      subtitle: "Typescript, Next.js",
+      description:
+        "A web app created for the volunteers and judges for the HackToFuture 3.0 hackathon which makes use of NFC.",
+      link: "https://github.com/HackToFuture/htf3web",
+    },
+    {
       title: "Portfolio Site",
       subtitle: "Typescript, Next.js",
       description: "This website :D",
-      link: "",
+      link: "https://joelcrasta.vercel.app",
     },
-  ]
+  ];
 
   return (
     <section>
@@ -63,7 +83,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
