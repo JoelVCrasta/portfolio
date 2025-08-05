@@ -29,7 +29,7 @@ export default function App() {
         <Projects />
         <TechDragCards />
 
-        <div className="flex gap-8">
+        <div className="flex gap-4 lg:gap-8 md:flex-row flex-col">
           <Message />
           <SnakeGame />
         </div>

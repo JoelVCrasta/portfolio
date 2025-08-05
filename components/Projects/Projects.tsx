@@ -1,6 +1,6 @@
-import Image from "next/image";
-import ProjectCard from "./ProjectCard";
-import ProjectCardMobile from "./ProjectCardMobile";
+import Image from "next/image"
+import ProjectCard from "./ProjectCard"
+import ProjectCardMobile from "./ProjectCardMobile"
 
 const Projects = () => {
   const projects = [
@@ -32,7 +32,7 @@ const Projects = () => {
       link: "",
     },
     {
-      title: "HTF 3.0 Volunteer App",
+      title: "HTF 3.0 App",
       subtitle: "Typescript, Next.js",
       description:
         "A web app created for the volunteers and judges for the HackToFuture 3.0 hackathon which makes use of NFC.",
@@ -44,24 +44,14 @@ const Projects = () => {
       description: "This website :D",
       link: "https://joelcrasta.vercel.app",
     },
-  ];
+  ]
 
   return (
     <section>
-      <div className="px-5 border-x-4 border-t-4 flex items-center justify-center gap-4 md:gap-8">
-        <Image
-          src={"/arrow2.gif"}
-          alt="test"
-          width={192}
-          height={0}
-          style={{ transform: "scaleX(-1)" }}
-        />
-
+      <div className="px-5 border-x-4 border-t-4 flex gap-4 md:gap-8">
         <p className="font-bold font-pixelify py-12 text-2xl md:text-5xl lg:text-7xl">
           Projects
         </p>
-
-        <Image src={"/arrow2.gif"} alt="test" width={192} height={0} />
       </div>
 
       <div className="divide-y-4 divide-muted border-4 border-muted">
@@ -83,7 +73,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
