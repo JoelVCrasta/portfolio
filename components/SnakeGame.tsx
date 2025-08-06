@@ -23,6 +23,17 @@ export default function SnakeGame() {
   const [score, setScore] = useState<number>(0)
   const [gameOver, setGameOver] = useState<boolean>(false)
   const [started, setStarted] = useState<boolean>(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -76,42 +87,45 @@ export default function SnakeGame() {
   useEffect(() => {
     if (!started || gameOver) return
 
-    const interval = setInterval(() => {
-      setSnake((prevSnake) => {
-        const newHead = {
-          x: prevSnake[0].x + dir.x,
-          y: prevSnake[0].y + dir.y,
-        }
+    const interval = setInterval(
+      () => {
+        setSnake((prevSnake) => {
+          const newHead = {
+            x: prevSnake[0].x + dir.x,
+            y: prevSnake[0].y + dir.y,
+          }
 
-        if (
-          newHead.x < 0 ||
-          newHead.x >= tileCount ||
-          newHead.y < 0 ||
-          newHead.y >= tileCount
-        ) {
-          setGameOver(true)
-          return prevSnake
-        }
-
-        for (const segment of prevSnake) {
-          if (segment.x === newHead.x && segment.y === newHead.y) {
+          if (
+            newHead.x < 0 ||
+            newHead.x >= tileCount ||
+            newHead.y < 0 ||
+            newHead.y >= tileCount
+          ) {
             setGameOver(true)
             return prevSnake
           }
-        }
 
-        const newSnake = [newHead, ...prevSnake]
+          for (const segment of prevSnake) {
+            if (segment.x === newHead.x && segment.y === newHead.y) {
+              setGameOver(true)
+              return prevSnake
+            }
+          }
 
-        if (newHead.x === food.x && newHead.y === food.y) {
-          setScore((s) => s + 1)
-          setFood(getRandomPosition())
-        } else {
-          newSnake.pop()
-        }
+          const newSnake = [newHead, ...prevSnake]
 
-        return newSnake
-      })
-    }, 140)
+          if (newHead.x === food.x && newHead.y === food.y) {
+            setScore((s) => s + 1)
+            setFood(getRandomPosition())
+          } else {
+            newSnake.pop()
+          }
+
+          return newSnake
+        })
+      },
+      isMobile ? 200 : 140
+    )
 
     return () => clearInterval(interval)
   }, [dir, food, gameOver, started])
@@ -144,7 +158,7 @@ export default function SnakeGame() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-2 md:p-5 border-4 lg:w-5/12 w-1/2">
+    <div className="flex flex-col items-center justify-center p-2 md:p-5 border-4 lg:w-5/12 md:w-1/2 mt-16 md:mt-0">
       <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full">
         <p className="text-2xl lg:text-2xl font-voxel font-bold">
           Score: {score}
@@ -197,37 +211,39 @@ export default function SnakeGame() {
       )}
 
       {/* Mobile controls */}
-      <div className="mt-4 flex items-center gap-2 lg:hidden">
-        <button
-          onClick={() => handleTouchDir("left")}
-          className="bg-foreground text-background px-5 py-1"
-        >
-          ←
-        </button>
-
-        <div className="flex flex-col gap-2">
+      {isMobile && (
+        <div className="mt-4 flex items-center gap-2 lg:hidden">
           <button
-            onClick={() => handleTouchDir("up")}
-            className="bg-foreground text-background px-6 py-1"
+            onClick={() => handleTouchDir("left")}
+            className="bg-foreground text-background px-5 py-1"
           >
-            ↑
+            ←
           </button>
 
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={() => handleTouchDir("up")}
+              className="bg-foreground text-background px-6 py-1"
+            >
+              ↑
+            </button>
+
+            <button
+              onClick={() => handleTouchDir("down")}
+              className="bg-foreground text-background px-6 py-1"
+            >
+              ↓
+            </button>
+          </div>
+
           <button
-            onClick={() => handleTouchDir("down")}
-            className="bg-foreground text-background px-6 py-1"
+            onClick={() => handleTouchDir("right")}
+            className="bg-foreground text-background px-5 py-1"
           >
-            ↓
+            →
           </button>
         </div>
-
-        <button
-          onClick={() => handleTouchDir("right")}
-          className="bg-foreground text-background px-5 py-1"
-        >
-          →
-        </button>
-      </div>
+      )}
     </div>
   )
 }
