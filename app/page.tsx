@@ -11,7 +11,7 @@ import Message from "@/components/Message"
 export default function App() {
   return (
     <main>
-      <section className="relative w-full h-screen">
+      <section className="relative w-full min-h-screen">
         <Spline
           scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode"
           className="absolute inset-0 w-full h-full z-0 hidden xl:block"
@@ -21,7 +21,7 @@ export default function App() {
         <Social />
 
         {/* Hero content */}
-        <Hero />
+        {/* <Hero /> */}
       </section>
 
       {/* Scrollable content */}

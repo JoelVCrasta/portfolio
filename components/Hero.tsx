@@ -6,7 +6,7 @@ import Container from "./Container"
 
 const Hero = () => {
   return (
-    <Container className="h-full flex flex-col pt-28 lg:pt-0 justify-center items-center xl:items-start pointer-events-none">
+    <Container className="h-full flex flex-col pt-28 lg:pt-0 justify-center items-center xl:items-start pointer-events-none border">
       <motion.div
         className="font-voxel leading-30 flex xl:block flex-col items-center"
         initial={{ opacity: 0, y: -40 }}
