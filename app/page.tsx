@@ -14,7 +14,7 @@ export default function App() {
       <section className="relative w-full min-h-screen">
         <Spline
           scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode"
-          className="absolute inset-0 w-full h-full z-0 hidden xl:block"
+          className="absolute inset-0 w-full h-full z-0 block"
         />
 
         <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#ffd88d]"></div>
@@ -29,7 +29,7 @@ export default function App() {
         <Projects />
         <TechDragCards />
 
-        <div className="flex gap-4 lg:gap-8 md:flex-row flex-col">
+        <div className="flex gap-x-4 lg:gap-8 md:flex-row flex-col">
           <Message />
           <SnakeGame />
         </div>
