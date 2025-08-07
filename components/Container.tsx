@@ -9,9 +9,9 @@ export default function Container({
 }: ContainerProps) {
   return (
     <div
-      className={`w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 ${className}`}
+      className={`w-full px-4 sm:px-6 lg:px-8 mx-auto relative z-10 bg-background flex justify-center mt-[100vh]`}
     >
-      {children}
+      <div className={`max-w-7xl ${className}`}>{children}</div>
     </div>
   )
 }
