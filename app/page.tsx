@@ -7,25 +7,40 @@ import Social from "@/components/Social"
 import Projects from "@/components/Projects/Projects"
 import SnakeGame from "@/components/SnakeGame"
 import Message from "@/components/Message"
+import Image from "next/image"
 
 export default function App() {
   return (
     <main>
-      <section className="relative w-full min-h-screen">
+      <section className="fixed inset-0 w-full -z-10 h-screen">
         <Spline
           scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode"
           className="absolute inset-0 w-full h-full z-0 block"
         />
 
-        <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#ffd88d]"></div>
+        <div className="absolute bottom-4 right-2 w-40 h-12 bg-foreground"></div>
         <Social />
+        <div className="absolute bottom-20 left-20 w-40 flex">
+          <p
+            className="font-pixelify text-background font-bold mr-2"
+            style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
+          >
+            SCROLL
+          </p>
+          <Image
+            src="/arrow-down.gif"
+            alt="Down Arrow"
+            width={40}
+            height={40}
+          />
+        </div>
 
         {/* Hero content */}
         {/* <Hero /> */}
       </section>
 
       {/* Scrollable content */}
-      <Container className="space-y-16 md:space-y-24 xl:space-y-32 mt-0 xl:mt-32">
+      <Container className="space-y-16 md:space-y-24 xl:space-y-32 pt-8 xl:pt-32 pb-16 md:pb-24 xl:pb-32">
         <Projects />
         <TechDragCards />
 

@@ -10,7 +10,7 @@ const MarqueeFooter = () => {
   }
 
   return (
-    <div className="bg-foreground text-background flex flex-col overflow-hidden mt-16 md:mt-24 xl:mt-32">
+    <div className="bg-foreground text-background flex flex-col overflow-hidden">
       <div className="py-4 flex justify-between ">
         {/* Socials */}
         <div className="font-pixelify px-2 xl:px-8 xl:w-1/3 w-1/2">
