@@ -1,17 +1,20 @@
 interface ButtonProps {
   text: string
-  href: string
+  className?: string
 }
 
-const Button = (props: ButtonProps) => {
-  const { text, href } = props
+const Button = ({ text, className }: ButtonProps) => {
   return (
-    <a
-      href={href}
-      className="w-36 md:w-44 h-10 border-1 border-accent flex justify-center items-center hover:bg-lime-300 hover:text-purple-900 transition-all duration-200"
+    <button
+      className={`relative px-2 py-3 bg-foreground text-background ${className}`}
     >
-      {text}
-    </a>
+      <div className="absolute w-2 h-2 bg-background top-0 right-0" />
+      <div className="absolute w-2 h-2 bg-background top-0 left-0" />
+      <div className="absolute w-2 h-2 bg-background bottom-0 right-0" />
+      <div className="absolute w-2 h-2 bg-background bottom-0 left-0" />
+
+      <div className="font-pixelify">{text}</div>
+    </button>
   )
 }
 
