@@ -13,7 +13,7 @@ const MarqueeFooter = () => {
     <div className="bg-foreground text-background flex flex-col overflow-hidden">
       <div className="py-4 flex justify-between ">
         {/* Socials */}
-        <div className="font-pixelify px-2 xl:px-8 xl:w-1/3 w-1/2">
+        <div className="font-pixelify pl-2 xl:pl-8 xl:w-1/3 w-1/2">
           <p className="mb-1 cursor-default text-lg md:text-xl xl:text-2xl">
             (&nbsp;&nbsp;Socials&nbsp;&nbsp;)
           </p>
@@ -61,7 +61,7 @@ const MarqueeFooter = () => {
         </div>
 
         {/* Contacts */}
-        <div className="font-pixelify px-2 xl:px-8 text-end xl:w-1/3 w-1/2">
+        <div className="font-pixelify pr-2 xl:pr-8 text-end xl:w-1/3 w-1/2">
           <p className="mb-1 cursor-default text-lg md:text-xl xl:text-2xl">
             (&nbsp;&nbsp;Contacts&nbsp;&nbsp;)
           </p>
