@@ -12,13 +12,10 @@ import Image from "next/image"
 export default function App() {
   return (
     <main>
-      <section className="fixed inset-0 w-full -z-10 h-screen">
-        <Spline
-          scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode"
-          className="absolute inset-0 w-full h-full z-0 block"
-        />
+      <section className="fixed inset-0 w-screen h-screen max-h-screen overflow-hidden -z-10 bg-[#4A280A]">
+        <Spline scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode" />
 
-        <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#4A280A]"></div>
+        <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#4A280A]" />
         <Social />
         <div className="absolute bottom-20 left-20 w-40 flex">
           <p
@@ -34,13 +31,10 @@ export default function App() {
             height={40}
           />
         </div>
-
-        {/* Hero content */}
-        {/* <Hero /> */}
       </section>
 
       {/* Scrollable content */}
-      <Container className="space-y-16 md:space-y-24 xl:space-y-32 pt-8 xl:pt-20 pb-16 md:pb-24 xl:pb-32">
+      <Container className="space-y-16 md:space-y-24 xl:space-y-32 pt-8 md:pt-14 xl:pt-20 pb-16 md:pb-24 xl:pb-32">
         <Profile />
 
         <Projects />
