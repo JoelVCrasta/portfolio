@@ -1,6 +1,6 @@
 import Spline from "@splinetool/react-spline/next"
 import Container from "@/components/Container"
-import Hero from "@/components/Hero"
+import Profile from "@/components/Profile"
 import MarqueeFooter from "@/components/MarqueeFooter"
 import { TechDragCards } from "@/components/TechDragCards"
 import Social from "@/components/Social"
@@ -18,7 +18,7 @@ export default function App() {
           className="absolute inset-0 w-full h-full z-0 block"
         />
 
-        <div className="absolute bottom-4 right-2 w-40 h-12 bg-foreground"></div>
+        <div className="absolute bottom-4 right-2 w-40 h-12 bg-[#4A280A]"></div>
         <Social />
         <div className="absolute bottom-20 left-20 w-40 flex">
           <p
@@ -40,7 +40,9 @@ export default function App() {
       </section>
 
       {/* Scrollable content */}
-      <Container className="space-y-16 md:space-y-24 xl:space-y-32 pt-8 xl:pt-32 pb-16 md:pb-24 xl:pb-32">
+      <Container className="space-y-16 md:space-y-24 xl:space-y-32 pt-8 xl:pt-20 pb-16 md:pb-24 xl:pb-32">
+        <Profile />
+
         <Projects />
         <TechDragCards />
 
