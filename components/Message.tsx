@@ -1,8 +1,10 @@
+import Button from "./Button"
+
 const Message = () => {
   return (
     <section id="contact" className="border-4 p-2 md:p-5 lg:w-7/12">
-      <h2 className="font-pixelify text-2xl md:text-5xl lg:text-7xl font-bold mb-4">
-        Send me a message :3
+      <h2 className="font-pixelify text-2xl md:text-5xl lg:text-7xl font-bold mb-8">
+        Send me a message
       </h2>
 
       <form
@@ -60,7 +62,10 @@ const Message = () => {
           />
         </div>
 
-        <button className="bg-foreground text-background">Submit</button>
+        <div className="flex justify-end gap-4">
+          <Button text="Reset" type="reset" />
+          <Button text="Get in Touch" type="reset" />
+        </div>
       </form>
     </section>
   )
