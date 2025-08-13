@@ -1,6 +1,6 @@
 const Message = () => {
   return (
-    <section className="border-4 p-2 md:p-5 lg:w-7/12">
+    <section id="contact" className="border-4 p-2 md:p-5 lg:w-7/12">
       <h2 className="font-pixelify text-2xl md:text-5xl lg:text-7xl font-bold mb-4">
         Send me a message :3
       </h2>
