@@ -6,7 +6,7 @@ interface ButtonProps {
 const Button = ({ text, className }: ButtonProps) => {
   return (
     <button
-      className={`relative px-2 py-3 bg-foreground text-background ${className}`}
+      className={`relative px-4 py-3 bg-foreground text-background ${className}`}
     >
       <div className="absolute w-2 h-2 bg-background top-0 right-0" />
       <div className="absolute w-2 h-2 bg-background top-0 left-0" />
