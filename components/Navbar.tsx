@@ -33,7 +33,7 @@ const Navbar = () => {
             key={link.label}
             href={`#${link.href}`}
             onClick={(e) => handleScroll(e, link.href)}
-            className="text-background font-pixelify text-xl hover:text-accent transition duration-200"
+            className="text-background font-pixelify text-xl hover:text-accent hover:scale-110 transition duration-200"
           >
             {link.label}
           </a>
