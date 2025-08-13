@@ -3,11 +3,13 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { label } from "motion/react-client"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
+    { label: "About", href: "about" },
     { label: "Projects", href: "projects" },
     { label: "Tech", href: "tech" },
     { label: "Contact", href: "contact" },
@@ -25,7 +27,7 @@ const Navbar = () => {
   return (
     <nav>
       {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-5">
+      <div className="hidden xl:flex space-x-5">
         {navLinks.map((link) => (
           <a
             key={link.label}
@@ -39,7 +41,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <button onClick={() => setIsOpen(true)} className="text-background">
           <Menu size={32} />
         </button>
@@ -53,7 +55,7 @@ const Navbar = () => {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed inset-0 flex flex-col items-center justify-center space-y-6 bg-[#4A280A] z-50"
+              className="fixed inset-0 flex flex-col items-center justify-center bg-[#4A280A] z-50 border border-background border-4"
             >
               {/* Close Button */}
               <button
@@ -63,16 +65,35 @@ const Navbar = () => {
                 <X size={32} />
               </button>
 
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={`#${link.href}`}
-                  onClick={(e) => handleScroll(e, link.href)}
-                  className="text-background font-pixelify text-2xl"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {/* Animated link container */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.25 },
+                  },
+                }}
+                className="flex flex-col items-center space-y-6"
+              >
+                {navLinks.map((link) => (
+                  <motion.a
+                    key={link.label}
+                    href={`#${link.href}`}
+                    onClick={(e) => handleScroll(e, link.href)}
+                    className="text-background font-pixelify text-4xl"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

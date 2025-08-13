@@ -6,7 +6,7 @@ import Button from "./Button"
 
 const Profile = () => {
   return (
-    <div className="flex flex-col w-full ">
+    <div id="about" className="flex flex-col w-full">
       <div className="md:mb-6 xl:mb-8">
         <motion.div
           className="font-voxel flex justify-center md:justify-start"
