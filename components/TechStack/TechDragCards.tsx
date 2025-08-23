@@ -4,10 +4,13 @@ import { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { twMerge } from "tailwind-merge"
 import { RefObject } from "react"
+import CornerSquares from "@/components/CornerSquares"
 
 const TechDragCards = () => {
   return (
     <section className="relative grid min-h-[600] xl:min-h-[800px] w-full place-content-center overflow-hidden select-none border-4">
+      <CornerSquares className="bg-foreground" />
+
       <h2 className="relative z-0 text-[16vw] font-bold text-foreground font-voxel md:text-[140px] xl:text-[200px]">
         Tech Stack
       </h2>

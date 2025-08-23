@@ -1,3 +1,5 @@
+import CornerSquares from "@/components/CornerSquares"
+
 const TechMobile = () => {
   const cardData = [
     {
@@ -19,17 +21,19 @@ const TechMobile = () => {
   ]
 
   return (
-    <section className="font-pixelify border-4 p-4">
+    <section className="font-pixelify border-4 p-4 relative">
+      <CornerSquares className="bg-foreground" />
+
       <h2 className="font-bold text-4xl mb-6">Tech Stack</h2>
 
       <div className="space-y-6">
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="border-2 p-4 shadow-lg shadow-foreground/40"
+            className="border-3 p-4 shadow-lg shadow-foreground/40 bg-accent"
           >
             <h3 className="font-bold text-2xl mb-1">{card.title}</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-1">
               {card.content.map((item, idx) => (
                 <p key={idx} className="text-lg leading-6">
                   {">"} {item}

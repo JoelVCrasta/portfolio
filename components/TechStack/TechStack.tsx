@@ -1,5 +1,6 @@
 import TechDragCards from "@/components/TechStack/TechDragCards"
 import TechMobile from "@/components/TechStack/TechMobile"
+import CornerSquares from "../CornerSquares"
 
 const TechStack = () => {
   return (
