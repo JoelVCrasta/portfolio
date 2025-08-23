@@ -28,7 +28,8 @@ const Projects = () => {
     {
       title: "Animoox",
       subtitle: "Typescript, Next.js, AWS",
-      description: "A lottie files and icon packs website.",
+      description:
+        "A lottie files and icon packs website. Worked on the admin dashboard and AWS integration.",
       link: "",
     },
     {
@@ -47,9 +48,9 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects">
+    <section id="projects" className="py-4">
       <div className="px-5 border-x-4 border-t-4 flex gap-4 md:gap-8">
-        <p className="font-bold font-pixelify py-12 text-2xl md:text-5xl lg:text-7xl">
+        <p className="font-bold font-pixelify py-6 text-4xl md:text-5xl lg:text-7xl text-center w-full">
           Projects
         </p>
       </div>
