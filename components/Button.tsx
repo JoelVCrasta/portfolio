@@ -1,3 +1,5 @@
+import CornerSquares from "@/components/CornerSquares"
+
 interface ButtonProps {
   text: string
   className?: string
@@ -17,10 +19,7 @@ const Button = ({
       type={type}
       onClick={onClick}
     >
-      <div className="absolute w-2 h-2 bg-background top-0 right-0" />
-      <div className="absolute w-2 h-2 bg-background top-0 left-0" />
-      <div className="absolute w-2 h-2 bg-background bottom-0 right-0" />
-      <div className="absolute w-2 h-2 bg-background bottom-0 left-0" />
+      <CornerSquares className="bg-background" />
 
       <div className="font-pixelify">{text}</div>
     </button>
