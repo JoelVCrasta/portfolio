@@ -13,7 +13,7 @@ import TechStack from "@/components/TechStack/TechStack"
 export default function App() {
   return (
     <main>
-      <section className="fixed inset-0 w-screen h-screen max-h-screen overflow-hidden -z-10 bg-[#4A280A]">
+      <section className="fixed inset-0 w-screen h-[100dvh] overflow-hidden -z-10 bg-[#4A280A]">
         <Spline scene="https://prod.spline.design/TxvfsVIZSlDnJRRB/scene.splinecode" />
 
         <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 md:p-10">
