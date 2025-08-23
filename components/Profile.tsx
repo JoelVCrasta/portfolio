@@ -3,10 +3,11 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Button from "./Button"
+import CornerSquares from "@/components/CornerSquares"
 
 const Profile = () => {
   return (
-    <div id="about" className="flex flex-col w-full">
+    <div id="about" className="flex flex-col w-full py-4">
       <div className="md:mb-6 xl:mb-8">
         <motion.div
           className="font-voxel flex justify-center md:justify-start"
@@ -21,15 +22,11 @@ const Profile = () => {
         </motion.div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center ">
-        <div className="flex-shrink-0">
-          <Image
-            src="/joel.jpeg"
-            alt="Me"
-            width={280}
-            height={80}
-            className="mb-6 md:mb-0"
-          />
+      <div className="flex flex-col md:flex-row items-center">
+        <div className="flex-shrink-0 relative border-4 mb-6 md:mb-0">
+          <CornerSquares className="bg-foreground" />
+
+          <Image src="/joel.jpeg" alt="Me" width={280} height={80} />
         </div>
 
         <motion.div
