@@ -49,10 +49,18 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-4">
-      <div className="px-5 border-x-4 border-t-4 flex gap-4 md:gap-8">
-        <p className="font-bold font-pixelify py-6 xl:py-12 text-4xl md:text-5xl lg:text-7xl text-center xl:text-start w-full">
+      <div className="px-5 border-x-4 border-t-4 flex justify-between items-center gap-4 md:gap-8 bg-foreground text-background border-foreground">
+        <p className="font-bold font-pixelify py-6 xl:py-12 text-4xl md:text-5xl lg:text-7xl text-center xl:text-start ">
           Projects
         </p>
+
+        <Image
+          src="/alien.gif"
+          alt="alien"
+          width={50}
+          height={50}
+          className="shrink-0"
+        />
       </div>
 
       <div className="divide-y-4 divide-muted border-4 border-muted">
