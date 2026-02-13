@@ -6,6 +6,16 @@ import Button from "./Button"
 import CornerSquares from "@/components/CornerSquares"
 
 const Profile = () => {
+  const handleDownloadResume = () => {
+    const resumeUrl = "/resume.pdf"
+    const link = document.createElement("a")
+    link.href = resumeUrl
+    link.download = "Joel_Resume.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div id="about" className="flex flex-col w-full py-4">
       <div className="md:mb-6 xl:mb-8">
@@ -47,7 +57,11 @@ const Profile = () => {
           </p>
 
           <div className="flex flex-col md:flex-row items-center">
-            <Button text="Get my resume" className="ml-0 md:ml-4 xl:ml-8" />
+            <Button
+              text="Get my resume"
+              className="ml-0 md:ml-4 xl:ml-8"
+              onClick={handleDownloadResume}
+            />
           </div>
         </motion.div>
       </div>
