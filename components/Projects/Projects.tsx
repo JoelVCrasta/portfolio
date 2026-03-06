@@ -60,6 +60,7 @@ const Projects = () => {
           width={50}
           height={50}
           className="shrink-0"
+          unoptimized
         />
       </div>
 

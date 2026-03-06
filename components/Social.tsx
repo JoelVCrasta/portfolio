@@ -4,7 +4,7 @@ import Image from "next/image"
 const Social = () => {
   return (
     <section className="flex items-center gap-4 text-background">
-      <Image src="/arrow.gif" alt="arrow" width={30} height={30} />
+      <Image src="/arrow.gif" alt="arrow" width={30} height={30} unoptimized />
       <a
         href="https://github.com/JoelVCrasta"
         target="_blank"

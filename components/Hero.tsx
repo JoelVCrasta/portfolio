@@ -21,7 +21,7 @@ const Hero = () => {
         >
           SCROLL
         </p>
-        <Image src="/arrow-down.gif" alt="Down Arrow" width={40} height={40} />
+        <Image src="/arrow-down.gif" alt="Down Arrow" width={40} height={40} unoptimized />
       </div>
     </section>
   )
